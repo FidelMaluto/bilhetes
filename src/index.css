@@ -1,0 +1,491 @@
+/* Angola Sports Tickets - Global Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  /* Brand Palette */
+  --primary-red: #D62828;
+  --primary-red-hover: #b71c1c;
+  --primary-red-light: #fef2f2;
+  --inst-black: #101114;
+  --inst-black-card: #16181f;
+  --accent-gold: #F4B942;
+  --accent-gold-hover: #e09f23;
+  --accent-gold-light: #fffbeb;
+  --white: #FFFFFF;
+  --bg-gray: #F4F5F7;
+  --secondary-gray: #777D87;
+  --confirm-green: #218B52;
+  --confirm-green-light: #ecfdf5;
+
+  /* Theme Dependent (Light Mode Default) */
+  --bg-main: #F4F5F7;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #FFFFFF;
+  --bg-muted: #EAECEF;
+  --border-color: #E2E5E9;
+  --border-focus: #D62828;
+  --text-primary: #101114;
+  --text-secondary: #5F6672;
+  --text-muted: #8E95A2;
+  --shadow-sm: 0 1px 2px 0 rgba(16, 17, 20, 0.05);
+  --shadow-md: 0 4px 12px -1px rgba(16, 17, 20, 0.08), 0 2px 4px -2px rgba(16, 17, 20, 0.05);
+  --shadow-lg: 0 12px 28px -4px rgba(16, 17, 20, 0.12), 0 6px 12px -4px rgba(16, 17, 20, 0.06);
+  --shadow-glow-red: 0 0 24px rgba(214, 40, 40, 0.25);
+  --shadow-glow-gold: 0 0 24px rgba(244, 185, 66, 0.3);
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dark Mode Theme Variables */
+[data-theme="dark"] {
+  --bg-main: #0B0C0E;
+  --bg-surface: #13151B;
+  --bg-surface-elevated: #191C24;
+  --bg-muted: #1E212B;
+  --border-color: #262A36;
+  --border-focus: #D62828;
+  --text-primary: #F4F5F7;
+  --text-secondary: #9DA4B2;
+  --text-muted: #6B7280;
+  --primary-red-light: rgba(214, 40, 40, 0.15);
+  --accent-gold-light: rgba(244, 185, 66, 0.15);
+  --confirm-green-light: rgba(33, 139, 82, 0.15);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 16px -2px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 32px -4px rgba(0, 0, 0, 0.65);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--transition-base), color var(--transition-base);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* Layout Containers */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Typography Helpers */
+.title-hero {
+  font-size: clamp(2.2rem, 5vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.title-section {
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.title-subsection {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 700;
+}
+
+.text-gold {
+  color: var(--accent-gold);
+}
+
+.text-red {
+  color: var(--primary-red);
+}
+
+.text-green {
+  color: var(--confirm-green);
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+/* Button Component Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--primary-red);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(214, 40, 40, 0.35);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-red-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(214, 40, 40, 0.45);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-muted);
+  border-color: var(--text-secondary);
+}
+
+.btn-gold {
+  background-color: var(--accent-gold);
+  color: var(--inst-black);
+  box-shadow: 0 4px 14px rgba(244, 185, 66, 0.35);
+}
+
+.btn-gold:hover {
+  background-color: var(--accent-gold-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(244, 185, 66, 0.45);
+}
+
+.btn-dark {
+  background-color: var(--inst-black);
+  color: #FFFFFF;
+}
+
+.btn-dark:hover {
+  background-color: #232630;
+}
+
+.btn-outline-red {
+  border: 1.5px solid var(--primary-red);
+  color: var(--primary-red);
+  background: transparent;
+}
+
+.btn-outline-red:hover {
+  background-color: var(--primary-red);
+  color: #FFFFFF;
+}
+
+.btn-outline-gold {
+  border: 1.5px solid var(--accent-gold);
+  color: var(--accent-gold);
+  background: transparent;
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--accent-gold);
+  color: var(--inst-black);
+}
+
+.btn-sm {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-lg {
+  padding: 0.95rem 1.8rem;
+  font-size: 1.05rem;
+  border-radius: var(--radius-md);
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.badge-red {
+  background-color: var(--primary-red-light);
+  color: var(--primary-red);
+  border: 1px solid rgba(214, 40, 40, 0.25);
+}
+
+.badge-gold {
+  background-color: var(--accent-gold-light);
+  color: #B45309;
+  border: 1px solid rgba(244, 185, 66, 0.35);
+}
+
+[data-theme="dark"] .badge-gold {
+  color: var(--accent-gold);
+}
+
+.badge-green {
+  background-color: var(--confirm-green-light);
+  color: var(--confirm-green);
+  border: 1px solid rgba(33, 139, 82, 0.25);
+}
+
+.badge-dark {
+  background-color: var(--inst-black);
+  color: #FFFFFF;
+}
+
+.badge-neutral {
+  background-color: var(--bg-muted);
+  color: var(--text-secondary);
+}
+
+/* Cards & Surfaces */
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(214, 40, 40, 0.3);
+}
+
+/* Angola Flag Ribbon */
+.angola-stripe-top {
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-red) 0%, var(--primary-red) 50%, var(--inst-black) 50%, var(--inst-black) 100%);
+  position: relative;
+}
+
+.angola-stripe-top::after {
+  content: "★";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--accent-gold);
+  font-size: 8px;
+  line-height: 1;
+}
+
+/* Grids */
+.grid-matches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .grid-matches {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.grid-stadiums {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.75rem;
+}
+
+/* Form Controls */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-color);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--primary-red);
+  box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.15);
+  outline: none;
+}
+
+/* Ticket Stub Style */
+.ticket-stub {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.ticket-stub::before,
+.ticket-stub::after {
+  content: '';
+  position: absolute;
+  top: 65%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--bg-main);
+  z-index: 2;
+}
+
+.ticket-stub::before {
+  left: -10px;
+  border-right: 1px solid var(--border-color);
+}
+
+.ticket-stub::after {
+  right: -10px;
+  border-left: 1px solid var(--border-color);
+}
+
+.ticket-perforation {
+  border-top: 2px dashed var(--border-color);
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Print Optimization */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  header, footer, .no-print, .btn {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .ticket-stub {
+    box-shadow: none !important;
+    border: 2px solid #000 !important;
+    page-break-inside: avoid;
+  }
+}

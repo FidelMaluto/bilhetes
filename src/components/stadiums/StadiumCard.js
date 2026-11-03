@@ -14,11 +14,12 @@ const StadiumCard = ({ stadium }) => {
         display: "flex",
         flexDirection: "column",
         backgroundColor: "var(--bg-surface)",
+        border: "1px solid var(--border-color)",
         height: "100%",
       }}
     >
       {/* Stadium Image with Badges */}
-      <div style={{ position: "relative", height: "200px", overflow: "hidden" }}>
+      <div style={{ position: "relative", height: "190px", overflow: "hidden" }}>
         <img
           src={stadium.image}
           alt={stadium.name}
@@ -26,16 +27,16 @@ const StadiumCard = ({ stadium }) => {
             width: "100%",
             height: "100%",
             objectFit: "cover",
-            transition: "transform 0.4s ease",
+            transition: "transform 0.3s ease",
           }}
-          onMouseEnter={(e) => (e.target.style.transform = "scale(1.05)")}
+          onMouseEnter={(e) => (e.target.style.transform = "scale(1.04)")}
           onMouseLeave={(e) => (e.target.style.transform = "scale(1)")}
         />
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(16,17,20,0.75) 100%)",
+            background: "linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(23,23,23,0.85) 100%)",
           }}
         />
 
@@ -43,22 +44,21 @@ const StadiumCard = ({ stadium }) => {
         <div
           style={{
             position: "absolute",
-            top: "12px",
-            right: "12px",
-            backgroundColor: "rgba(16, 17, 20, 0.85)",
-            backdropFilter: "blur(6px)",
-            padding: "0.3rem 0.65rem",
-            borderRadius: "var(--radius-full)",
+            top: "10px",
+            right: "10px",
+            backgroundColor: "#171717",
+            padding: "0.25rem 0.6rem",
+            borderRadius: "var(--radius-sm)",
             display: "flex",
             alignItems: "center",
             gap: "0.35rem",
             color: "var(--accent-gold)",
-            fontSize: "0.75rem",
+            fontSize: "0.72rem",
             fontWeight: 700,
-            border: "1px solid rgba(244, 185, 66, 0.3)",
+            border: "1px solid #333333",
           }}
         >
-          <Users size={13} />
+          <Users size={12} />
           <span>{stadium.capacity.toLocaleString()} espectadores</span>
         </div>
 
@@ -66,25 +66,25 @@ const StadiumCard = ({ stadium }) => {
         <div
           style={{
             position: "absolute",
-            bottom: "12px",
+            bottom: "10px",
             left: "12px",
             color: "#FFFFFF",
             display: "flex",
             alignItems: "center",
             gap: "0.35rem",
-            fontSize: "0.82rem",
+            fontSize: "0.8rem",
             fontWeight: 600,
           }}
         >
-          <MapPin size={15} color="var(--primary-red)" />
+          <MapPin size={14} color="var(--primary-red)" />
           <span>{stadium.city}</span>
         </div>
       </div>
 
       {/* Stadium Details */}
-      <div style={{ padding: "1.25rem", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+      <div style={{ padding: "1.2rem", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
         <div>
-          <h3 style={{ fontSize: "1.15rem", fontWeight: 800, marginBottom: "0.4rem" }}>
+          <h3 style={{ fontSize: "1.1rem", fontWeight: 800, marginBottom: "0.35rem" }}>
             {stadium.name}
           </h3>
           <p style={{ fontSize: "0.82rem", color: "var(--text-secondary)", marginBottom: "0.85rem", lineHeight: 1.4 }}>
@@ -119,12 +119,12 @@ const StadiumCard = ({ stadium }) => {
           </div>
 
           <Link
-            to={`/estadios/${stadium.slug}`}
+            to={`/estadios/${stadium.id}`}
             className="btn btn-secondary btn-sm"
-            style={{ fontSize: "0.8rem", padding: "0.45rem 0.85rem" }}
+            style={{ padding: "0.4rem 0.85rem", fontSize: "0.78rem" }}
           >
             <span>Ver Recinto</span>
-            <ArrowRight size={14} />
+            <ArrowRight size={13} />
           </Link>
         </div>
       </div>

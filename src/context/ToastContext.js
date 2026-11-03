@@ -44,18 +44,19 @@ export const ToastProvider = ({ children }) => {
               justifyContent: "space-between",
               gap: "0.75rem",
               padding: "0.85rem 1rem",
-              borderRadius: "12px",
+              borderRadius: "var(--radius-md)",
               backgroundColor: "var(--bg-surface)",
               color: "var(--text-primary)",
-              border: `1.5px solid ${
+              border: "1px solid var(--border-color)",
+              borderLeft: `4px solid ${
                 toast.type === "success"
                   ? "var(--confirm-green)"
                   : toast.type === "error"
                   ? "var(--primary-red)"
                   : "var(--accent-gold)"
               }`,
-              boxShadow: "0 10px 25px -5px rgba(0,0,0,0.25)",
-              animation: "fadeIn 0.25s ease-out",
+              boxShadow: "var(--shadow-md)",
+              animation: "fadeIn 0.2s ease-out",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>

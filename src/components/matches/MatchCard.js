@@ -33,7 +33,7 @@ const MatchCard = ({ match }) => {
         position: "relative",
         height: "100%",
         backgroundColor: "var(--bg-surface)",
-        border: "1.5px solid var(--border-color)",
+        border: "1px solid var(--border-color)",
         borderRadius: "var(--radius-lg)",
         overflow: "hidden",
         boxShadow: "var(--shadow-sm)",
@@ -42,7 +42,7 @@ const MatchCard = ({ match }) => {
       {/* Top Banner with Competition & Badges */}
       <div
         style={{
-          padding: "0.85rem 1.15rem",
+          padding: "0.75rem 1.1rem",
           backgroundColor: "var(--bg-surface-elevated)",
           borderBottom: "1px solid var(--border-color)",
           display: "flex",
@@ -51,13 +51,13 @@ const MatchCard = ({ match }) => {
           gap: "0.5rem",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "0.45rem", flexWrap: "wrap" }}>
-          <span className="badge badge-gold" style={{ fontSize: "0.7rem", fontWeight: 800 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flexWrap: "wrap" }}>
+          <span className="badge badge-gold" style={{ fontSize: "0.7rem", fontWeight: 700 }}>
             {competition ? competition.name : "Competição"}
           </span>
           {match.isDerby && (
             <span className="badge badge-red" style={{ fontSize: "0.7rem" }}>
-              <Flame size={12} />
+              <Flame size={11} />
               <span>Clássico</span>
             </span>
           )}
@@ -71,7 +71,7 @@ const MatchCard = ({ match }) => {
           style={{
             padding: "4px",
             color: favorite ? "var(--primary-red)" : "var(--text-secondary)",
-            transition: "transform 0.15s ease",
+            transition: "color 0.15s ease",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -79,37 +79,36 @@ const MatchCard = ({ match }) => {
           title={favorite ? "Remover dos favoritos" : "Guardar como favorito"}
           aria-label="Favorito"
         >
-          <Heart size={19} fill={favorite ? "var(--primary-red)" : "transparent"} />
+          <Heart size={18} fill={favorite ? "var(--primary-red)" : "transparent"} />
         </button>
       </div>
 
       {/* Main Face-Off Area */}
-      <div style={{ padding: "1.35rem 1.25rem", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+      <div style={{ padding: "1.25rem 1.15rem", flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
         
         {/* Teams Visual Faceoff */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1.25rem" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1.2rem" }}>
           
           {/* Home Team */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1, textAlign: "center", gap: "0.5rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1, textAlign: "center", gap: "0.45rem" }}>
             <div
               style={{
-                width: "52px",
-                height: "52px",
-                borderRadius: "14px",
+                width: "48px",
+                height: "48px",
+                borderRadius: "8px",
                 backgroundColor: match.homeTeam.badgeColor || "var(--primary-red)",
                 color: "#FFFFFF",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontWeight: 900,
-                fontSize: "1rem",
-                boxShadow: "0 6px 14px rgba(0,0,0,0.15)",
-                border: "2.5px solid var(--bg-surface)",
+                fontSize: "0.95rem",
+                border: "1px solid var(--border-color)",
               }}
             >
               {match.homeTeam.badgeText || match.homeTeam.shortName.substring(0, 3).toUpperCase()}
             </div>
-            <strong style={{ fontSize: "0.95rem", lineHeight: 1.2, color: "var(--text-primary)" }}>
+            <strong style={{ fontSize: "0.92rem", lineHeight: 1.25, color: "var(--text-primary)" }}>
               {match.homeTeam.shortName}
             </strong>
             <span style={{ fontSize: "0.72rem", color: "var(--text-secondary)" }}>
@@ -117,17 +116,18 @@ const MatchCard = ({ match }) => {
             </span>
           </div>
 
-          {/* VS Divider */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "0 0.6rem" }}>
+          {/* VS Divider - Sóbrio e Discreto */}
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", padding: "0 0.5rem" }}>
             <span
               style={{
-                fontSize: "0.75rem",
-                fontWeight: 900,
-                color: "#FFFFFF",
-                backgroundColor: "var(--inst-black)",
-                padding: "0.25rem 0.6rem",
-                borderRadius: "var(--radius-full)",
+                fontSize: "0.72rem",
+                fontWeight: 800,
+                color: "var(--text-secondary)",
+                backgroundColor: "var(--bg-muted)",
+                padding: "0.2rem 0.55rem",
+                borderRadius: "var(--radius-sm)",
                 border: "1px solid var(--border-color)",
+                letterSpacing: "0.05em",
               }}
             >
               VS
@@ -135,26 +135,25 @@ const MatchCard = ({ match }) => {
           </div>
 
           {/* Away Team */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1, textAlign: "center", gap: "0.5rem" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flex: 1, textAlign: "center", gap: "0.45rem" }}>
             <div
               style={{
-                width: "52px",
-                height: "52px",
-                borderRadius: "14px",
+                width: "48px",
+                height: "48px",
+                borderRadius: "8px",
                 backgroundColor: match.awayTeam.badgeColor || "var(--inst-black)",
                 color: "#FFFFFF",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 fontWeight: 900,
-                fontSize: "1rem",
-                boxShadow: "0 6px 14px rgba(0,0,0,0.15)",
-                border: "2.5px solid var(--bg-surface)",
+                fontSize: "0.95rem",
+                border: "1px solid var(--border-color)",
               }}
             >
               {match.awayTeam.badgeText || match.awayTeam.shortName.substring(0, 3).toUpperCase()}
             </div>
-            <strong style={{ fontSize: "0.95rem", lineHeight: 1.2, color: "var(--text-primary)" }}>
+            <strong style={{ fontSize: "0.92rem", lineHeight: 1.25, color: "var(--text-primary)" }}>
               {match.awayTeam.shortName}
             </strong>
             <span style={{ fontSize: "0.72rem", color: "var(--text-secondary)" }}>
@@ -166,26 +165,27 @@ const MatchCard = ({ match }) => {
         {/* Match Time & Location Strip */}
         <div
           style={{
-            backgroundColor: "var(--bg-muted)",
+            backgroundColor: "var(--bg-surface-elevated)",
             borderRadius: "var(--radius-md)",
-            padding: "0.75rem 0.9rem",
+            border: "1px solid var(--border-color)",
+            padding: "0.65rem 0.85rem",
             display: "flex",
             flexDirection: "column",
-            gap: "0.45rem",
-            fontSize: "0.82rem",
-            marginBottom: "1.2rem",
+            gap: "0.4rem",
+            fontSize: "0.8rem",
+            marginBottom: "1.1rem",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--text-secondary)" }}>
-            <Calendar size={15} color="var(--primary-red)" />
+          <div style={{ display: "flex", alignItems: "center", gap: "0.45rem", color: "var(--text-secondary)" }}>
+            <Calendar size={14} color="var(--primary-red)" />
             <strong style={{ color: "var(--text-primary)" }}>{formatDatePt(match.date)}</strong>
             <span style={{ color: "var(--text-muted)" }}>•</span>
-            <Clock size={14} color="var(--accent-gold)" />
+            <Clock size={13} color="var(--accent-gold)" />
             <span>{match.time}</span>
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "var(--text-secondary)" }}>
-            <MapPin size={15} color="var(--confirm-green)" />
+          <div style={{ display: "flex", alignItems: "center", gap: "0.45rem", color: "var(--text-secondary)" }}>
+            <MapPin size={14} color="var(--text-muted)" />
             <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
               {stadium ? stadium.name : match.province}
             </span>
@@ -203,10 +203,10 @@ const MatchCard = ({ match }) => {
           }}
         >
           <div>
-            <span style={{ fontSize: "0.72rem", color: "var(--text-secondary)", display: "block" }}>
+            <span style={{ fontSize: "0.7rem", color: "var(--text-secondary)", display: "block", textTransform: "uppercase", letterSpacing: "0.04em" }}>
               A partir de
             </span>
-            <span style={{ fontSize: "1.2rem", fontWeight: 900, color: "var(--primary-red)" }}>
+            <span style={{ fontSize: "1.15rem", fontWeight: 800, color: "var(--primary-red)" }}>
               {formatKz(match.startingPrice)}
             </span>
           </div>
@@ -214,11 +214,11 @@ const MatchCard = ({ match }) => {
           <Link
             to={`/jogos/${match.id}`}
             className="btn btn-primary btn-sm"
-            style={{ padding: "0.55rem 1.1rem" }}
+            style={{ padding: "0.5rem 1rem" }}
           >
-            <Ticket size={15} />
+            <Ticket size={14} />
             <span>Ver Bilhetes</span>
-            <ChevronRight size={15} />
+            <ChevronRight size={14} />
           </Link>
         </div>
 

@@ -51,76 +51,73 @@ const Header = () => {
       {/* Top Angola Flag Ribbon */}
       <div className="angola-stripe-top" />
 
-      {/* Main Sticky Header */}
+      {/* Main Header - Fundo Preto Carvão Sólido */}
       <header
         style={{
           position: "sticky",
           top: 0,
           zIndex: 1000,
-          backgroundColor: "var(--bg-surface)",
-          borderBottom: "1px solid var(--border-color)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
+          backgroundColor: "#171717",
+          borderBottom: "1px solid #262626",
           transition: "background-color var(--transition-base), border-color var(--transition-base)",
         }}
       >
-        <div className="container-wide" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "72px" }}>
+        <div className="container-wide" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "70px" }}>
           
-          {/* Logo */}
+          {/* Logo Oficial com Novas Cores */}
           <Link to="/" style={{ display: "flex", alignItems: "center", gap: "0.75rem", textDecoration: "none" }}>
             <div
               style={{
-                width: "42px",
-                height: "42px",
-                borderRadius: "10px",
+                width: "40px",
+                height: "40px",
+                borderRadius: "8px",
                 backgroundColor: "var(--primary-red)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 color: "#FFFFFF",
-                boxShadow: "0 4px 12px rgba(214, 40, 40, 0.35)",
                 position: "relative",
               }}
             >
-              <Ticket size={24} />
+              <Ticket size={22} color="#FFFFFF" />
               <span
                 style={{
                   position: "absolute",
-                  bottom: "-3px",
-                  right: "-3px",
-                  width: "12px",
-                  height: "12px",
+                  bottom: "-2px",
+                  right: "-2px",
+                  width: "10px",
+                  height: "10px",
                   borderRadius: "50%",
                   backgroundColor: "var(--accent-gold)",
-                  border: "2px solid var(--bg-surface)",
+                  border: "2px solid #171717",
                 }}
               />
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.3rem" }}>
-                <span style={{ fontSize: "1.2rem", fontWeight: 900, letterSpacing: "-0.03em", color: "var(--text-primary)" }}>
+                <span style={{ fontSize: "1.18rem", fontWeight: 900, letterSpacing: "-0.02em", color: "#E8E4DC" }}>
                   ANGOLA
                 </span>
-                <span style={{ fontSize: "1.2rem", fontWeight: 900, letterSpacing: "-0.03em", color: "var(--primary-red)" }}>
+                <span style={{ fontSize: "1.18rem", fontWeight: 900, letterSpacing: "-0.02em", color: "var(--primary-red)" }}>
                   TICKETS
                 </span>
               </div>
-              <span style={{ fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em", color: "var(--text-secondary)", textTransform: "uppercase" }}>
+              <span style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.08em", color: "#A5A29C", textTransform: "uppercase" }}>
                 Bilhética Desportiva
               </span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav - Navegação Simples e Institucional */}
           <nav style={{ display: "none", alignItems: "center", gap: "1.75rem" }} className="desktop-nav">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 style={({ isActive }) => ({
-                  fontSize: "0.95rem",
+                  fontSize: "0.92rem",
                   fontWeight: isActive ? "700" : "500",
-                  color: isActive ? "var(--primary-red)" : "var(--text-secondary)",
+                  color: isActive ? "var(--primary-red)" : "#A5A29C",
                   textDecoration: "none",
                   transition: "color var(--transition-fast)",
                   padding: "0.4rem 0",
@@ -132,8 +129,8 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Header Actions */}
-          <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+          {/* Header Actions - Ícones Monocromáticos e Botão Sólido */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             
             {/* Search Trigger */}
             <button
@@ -141,12 +138,12 @@ const Header = () => {
               className="btn-icon"
               title="Pesquisar jogos e recintos"
               style={{
-                color: "var(--text-primary)",
-                backgroundColor: searchOpen ? "var(--bg-muted)" : "transparent",
+                color: "#E8E4DC",
+                backgroundColor: searchOpen ? "#262626" : "transparent",
               }}
               aria-label="Abrir pesquisa"
             >
-              <Search size={20} />
+              <Search size={19} color="#E8E4DC" />
             </button>
 
             {/* Dark / Light Toggle */}
@@ -154,10 +151,10 @@ const Header = () => {
               onClick={toggleTheme}
               className="btn-icon"
               title={isDark ? "Mudar para modo claro" : "Mudar para modo escuro"}
-              style={{ color: "var(--text-primary)" }}
+              style={{ color: "#E8E4DC" }}
               aria-label="Alternar tema"
             >
-              {isDark ? <Sun size={20} color="var(--accent-gold)" /> : <Moon size={20} />}
+              {isDark ? <Sun size={19} color="#B08B42" /> : <Moon size={19} color="#E8E4DC" />}
             </button>
 
             {/* Favorites Button */}
@@ -165,10 +162,10 @@ const Header = () => {
               to="/favoritos"
               className="btn-icon"
               title="Jogos Favoritos"
-              style={{ color: "var(--text-primary)", position: "relative" }}
+              style={{ color: "#E8E4DC", position: "relative" }}
               aria-label="Jogos Favoritos"
             >
-              <Heart size={20} />
+              <Heart size={19} color="#E8E4DC" />
               {favorites.length > 0 && (
                 <span
                   style={{
@@ -177,10 +174,10 @@ const Header = () => {
                     right: "4px",
                     backgroundColor: "var(--primary-red)",
                     color: "#FFFFFF",
-                    fontSize: "0.68rem",
+                    fontSize: "0.65rem",
                     fontWeight: 700,
-                    width: "18px",
-                    height: "18px",
+                    width: "17px",
+                    height: "17px",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
@@ -197,10 +194,10 @@ const Header = () => {
               to="/carrinho"
               className="btn-icon"
               title="Carrinho de Compras"
-              style={{ color: "var(--text-primary)", position: "relative" }}
+              style={{ color: "#E8E4DC", position: "relative" }}
               aria-label="Carrinho de compras"
             >
-              <ShoppingCart size={20} />
+              <ShoppingCart size={19} color="#E8E4DC" />
               {itemCount > 0 && (
                 <span
                   style={{
@@ -208,16 +205,15 @@ const Header = () => {
                     top: "4px",
                     right: "4px",
                     backgroundColor: "var(--accent-gold)",
-                    color: "var(--inst-black)",
-                    fontSize: "0.68rem",
+                    color: "#171717",
+                    fontSize: "0.65rem",
                     fontWeight: 800,
-                    width: "18px",
-                    height: "18px",
+                    width: "17px",
+                    height: "17px",
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
                   }}
                 >
                   {itemCount}
@@ -228,17 +224,24 @@ const Header = () => {
             {/* User Area Link */}
             <Link
               to="/meus-bilhetes"
-              className="btn-secondary btn-sm"
-              style={{ display: "none", alignItems: "center", gap: "0.4rem" }}
+              className="btn btn-secondary btn-sm"
+              style={{
+                display: "none",
+                alignItems: "center",
+                gap: "0.4rem",
+                backgroundColor: "#222222",
+                borderColor: "#333333",
+                color: "#E8E4DC",
+              }}
               id="user-tickets-desktop-btn"
             >
-              <User size={16} />
+              <User size={15} color="#E8E4DC" />
               <span>Meus Bilhetes</span>
             </Link>
 
-            {/* Prominent CTA */}
+            {/* Prominent CTA - Botão Principal Vermelho Sólido */}
             <Link to="/jogos" className="btn btn-primary btn-sm" style={{ display: "none" }} id="cta-buy-desktop">
-              <Ticket size={16} />
+              <Ticket size={15} color="#FFFFFF" />
               <span>Comprar Bilhete</span>
             </Link>
 
@@ -246,22 +249,22 @@ const Header = () => {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="btn-icon"
-              style={{ color: "var(--text-primary)", display: "flex" }}
+              style={{ color: "#E8E4DC", display: "flex" }}
               id="mobile-menu-toggle"
               aria-label="Abrir menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={22} color="#E8E4DC" /> : <Menu size={22} color="#E8E4DC" />}
             </button>
           </div>
         </div>
 
-        {/* Expandable Search Bar */}
+        {/* Expandable Search Bar - Fundo Sólido e Bordas Neutras */}
         {searchOpen && (
           <div
             style={{
               padding: "1rem 1.25rem",
-              backgroundColor: "var(--bg-surface-elevated)",
-              borderTop: "1px solid var(--border-color)",
+              backgroundColor: "#1F1F1F",
+              borderTop: "1px solid #2B2B2B",
               animation: "fadeIn 0.2s ease-in-out",
             }}
           >
@@ -269,13 +272,13 @@ const Header = () => {
               <form onSubmit={handleSearchSubmit} style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
                 <div style={{ position: "relative", flex: 1 }}>
                   <Search
-                    size={20}
+                    size={18}
                     style={{
                       position: "absolute",
                       left: "14px",
                       top: "50%",
                       transform: "translateY(-50%)",
-                      color: "var(--text-secondary)",
+                      color: "#A5A29C",
                     }}
                   />
                   <input
@@ -285,7 +288,12 @@ const Header = () => {
                     placeholder="Pesquisar por equipa, jogo (ex: Petro, 1.º de Agosto), estádio ou modalidade..."
                     autoFocus
                     className="form-control"
-                    style={{ paddingLeft: "44px" }}
+                    style={{
+                      paddingLeft: "42px",
+                      backgroundColor: "#171717",
+                      borderColor: "#333333",
+                      color: "#E8E4DC",
+                    }}
                   />
                 </div>
                 <button type="submit" className="btn btn-primary">
@@ -295,6 +303,7 @@ const Header = () => {
                   type="button"
                   onClick={() => setSearchOpen(false)}
                   className="btn btn-secondary"
+                  style={{ backgroundColor: "#262626", borderColor: "#333333", color: "#E8E4DC" }}
                 >
                   Cancelar
                 </button>
@@ -309,45 +318,45 @@ const Header = () => {
         <div
           style={{
             position: "fixed",
-            top: "76px",
+            top: "73px",
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(0,0,0,0.6)",
+            backgroundColor: "rgba(0,0,0,0.7)",
             zIndex: 999,
             display: "flex",
             justifyContent: "flex-end",
-            backdropFilter: "blur(4px)",
           }}
           onClick={() => setMobileMenuOpen(false)}
         >
           <div
             style={{
-              width: "82%",
+              width: "84%",
               maxWidth: "340px",
               height: "100%",
-              backgroundColor: "var(--bg-surface)",
+              backgroundColor: "#171717",
+              color: "#E8E4DC",
               padding: "1.5rem",
               display: "flex",
               flexDirection: "column",
               gap: "1.25rem",
-              boxShadow: "-8px 0 25px rgba(0,0,0,0.3)",
-              animation: "fadeIn 0.25s ease-out",
+              borderLeft: "1px solid #2E2E2E",
+              animation: "fadeIn 0.2s ease-out",
               overflowY: "auto",
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid var(--border-color)", paddingBottom: "1rem" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #282828", paddingBottom: "1rem" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
                 <Ticket size={20} color="var(--primary-red)" />
-                <span style={{ fontWeight: 800, fontSize: "1.1rem" }}>Menu de Navegação</span>
+                <span style={{ fontWeight: 800, fontSize: "1.05rem", color: "#E8E4DC" }}>Menu de Navegação</span>
               </div>
-              <button onClick={() => setMobileMenuOpen(false)} className="btn-icon">
-                <X size={20} />
+              <button onClick={() => setMobileMenuOpen(false)} className="btn-icon" style={{ color: "#E8E4DC" }}>
+                <X size={20} color="#E8E4DC" />
               </button>
             </div>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
               {navLinks.map((link) => (
                 <NavLink
                   key={link.path}
@@ -357,42 +366,42 @@ const Header = () => {
                     display: "flex",
                     alignItems: "center",
                     gap: "0.8rem",
-                    padding: "0.85rem 1rem",
-                    borderRadius: "10px",
-                    fontSize: "1rem",
+                    padding: "0.8rem 1rem",
+                    borderRadius: "6px",
+                    fontSize: "0.95rem",
                     fontWeight: isActive ? 700 : 500,
-                    backgroundColor: isActive ? "var(--primary-red-light)" : "transparent",
-                    color: isActive ? "var(--primary-red)" : "var(--text-primary)",
+                    backgroundColor: isActive ? "rgba(165, 31, 39, 0.2)" : "transparent",
+                    color: isActive ? "var(--primary-red)" : "#E8E4DC",
                     textDecoration: "none",
                   })}
                 >
-                  {link.label === "Início" && <Compass size={18} />}
-                  {link.label === "Jogos" && <Ticket size={18} />}
-                  {link.label === "Modalidades" && <Layers size={18} />}
-                  {link.label === "Competições" && <Trophy size={18} />}
-                  {link.label === "Estádios" && <Shield size={18} />}
+                  {link.label === "Início" && <Compass size={18} color="#A5A29C" />}
+                  {link.label === "Jogos" && <Ticket size={18} color="#A5A29C" />}
+                  {link.label === "Modalidades" && <Layers size={18} color="#A5A29C" />}
+                  {link.label === "Competições" && <Trophy size={18} color="#A5A29C" />}
+                  {link.label === "Estádios" && <Shield size={18} color="#A5A29C" />}
                   <span>{link.label}</span>
                 </NavLink>
               ))}
             </div>
 
-            <hr style={{ borderColor: "var(--border-color)", margin: "0.5rem 0" }} />
+            <hr style={{ borderColor: "#282828", margin: "0.5rem 0" }} />
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               <Link
                 to="/meus-bilhetes"
                 onClick={() => setMobileMenuOpen(false)}
                 className="btn btn-secondary"
-                style={{ justifyContent: "flex-start", width: "100%" }}
+                style={{ justifyContent: "flex-start", width: "100%", backgroundColor: "#222222", borderColor: "#333333", color: "#E8E4DC" }}
               >
-                <User size={18} />
+                <User size={18} color="#A5A29C" />
                 <span>Meus Bilhetes Digitais</span>
               </Link>
               <Link
                 to="/favoritos"
                 onClick={() => setMobileMenuOpen(false)}
                 className="btn btn-secondary"
-                style={{ justifyContent: "flex-start", width: "100%" }}
+                style={{ justifyContent: "flex-start", width: "100%", backgroundColor: "#222222", borderColor: "#333333", color: "#E8E4DC" }}
               >
                 <Heart size={18} color="var(--primary-red)" />
                 <span>Favoritos ({favorites.length})</span>
@@ -400,19 +409,19 @@ const Header = () => {
               <Link
                 to="/carrinho"
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn btn-gold"
-                style={{ justifyContent: "center", width: "100%", marginTop: "0.5rem" }}
+                className="btn btn-secondary"
+                style={{ justifyContent: "flex-start", width: "100%", backgroundColor: "#222222", borderColor: "#333333", color: "#E8E4DC" }}
               >
-                <ShoppingCart size={18} />
+                <ShoppingCart size={18} color="var(--accent-gold)" />
                 <span>Carrinho ({itemCount})</span>
               </Link>
               <Link
                 to="/jogos"
                 onClick={() => setMobileMenuOpen(false)}
                 className="btn btn-primary"
-                style={{ justifyContent: "center", width: "100%" }}
+                style={{ justifyContent: "center", width: "100%", marginTop: "0.25rem" }}
               >
-                <Ticket size={18} />
+                <Ticket size={18} color="#FFFFFF" />
                 <span>Comprar Bilhete Agora</span>
               </Link>
             </div>
@@ -420,7 +429,7 @@ const Header = () => {
         </div>
       )}
 
-      {/* Style query for desktop navigation display */}
+      {/* Responsive layout queries */}
       <style>{`
         @media (min-width: 900px) {
           .desktop-nav {

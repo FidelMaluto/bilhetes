@@ -11,7 +11,7 @@ const steps = [
   },
   {
     step: "02",
-    title: "Selecciona o tipo de bilhete",
+    title: "Selecciona o sector",
     description: "Consulta as categorias disponíveis: Bancada Geral, Central, VIP ou Camarote com vista privilegiada para o espectáculo.",
     icon: Ticket,
     color: "var(--accent-gold)",
@@ -21,32 +21,32 @@ const steps = [
     title: "Confirma os dados da compra",
     description: "Revisa o teu carrinho e simula o pagamento através de Multicaixa Express ou Pagamento por Referência sem complicação.",
     icon: CheckSquare,
-    color: "var(--confirm-green)",
+    color: "var(--primary-red)",
   },
   {
     step: "04",
     title: "Recebe o teu bilhete digital",
     description: "O teu bilhete digital oficial é gerado imediatamente com QR Code exclusivo para entrada directa e rápida nos torniquetes.",
     icon: QrCode,
-    color: "var(--primary-red)",
+    color: "var(--accent-gold)",
   },
 ];
 
 const HowItWorks = () => {
   return (
-    <section style={{ padding: "4.5rem 0", backgroundColor: "var(--bg-main)" }}>
+    <section style={{ padding: "4rem 0", backgroundColor: "var(--bg-main)" }}>
       <div className="container">
         
         {/* Section Header */}
-        <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 3rem" }}>
-          <span className="badge badge-gold" style={{ marginBottom: "0.75rem" }}>
-            PROCESSO SIMPLES & INTUITIVO
+        <div style={{ textAlign: "center", maxWidth: "640px", margin: "0 auto 2.75rem" }}>
+          <span className="badge badge-gold" style={{ marginBottom: "0.6rem" }}>
+            PROCESSO SIMPLES & INSTITUCIONAL
           </span>
-          <h2 className="title-section" style={{ marginBottom: "0.75rem" }}>
+          <h2 className="title-section" style={{ marginBottom: "0.6rem" }}>
             Como funciona a compra de bilhetes?
           </h2>
           <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem" }}>
-            Em apenas 4 passos rápidos, garante o teu lugar nas bancadas para apoiar as cores do teu clube em Angola.
+            Em 4 passos simples, garante o teu lugar nas bancadas para apoiar os clubes e atletas de Angola.
           </p>
         </div>
 
@@ -55,30 +55,31 @@ const HowItWorks = () => {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "1.75rem",
+            gap: "1.5rem",
           }}
         >
-          {steps.map((item, index) => {
+          {steps.map((item) => {
             const Icon = item.icon;
             return (
               <div
                 key={item.step}
                 className="card"
                 style={{
-                  padding: "1.75rem 1.4rem",
+                  padding: "1.6rem 1.3rem",
                   position: "relative",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "1rem",
-                  borderTop: `4px solid ${item.color}`,
+                  gap: "0.85rem",
+                  borderTop: `3px solid ${item.color}`,
+                  backgroundColor: "var(--bg-surface)",
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <div
                     style={{
-                      width: "48px",
-                      height: "48px",
-                      borderRadius: "12px",
+                      width: "44px",
+                      height: "44px",
+                      borderRadius: "8px",
                       backgroundColor: "var(--bg-muted)",
                       display: "flex",
                       alignItems: "center",
@@ -86,25 +87,25 @@ const HowItWorks = () => {
                       color: item.color,
                     }}
                   >
-                    <Icon size={24} />
+                    <Icon size={22} color={item.color} />
                   </div>
                   <span
                     style={{
-                      fontSize: "1.75rem",
+                      fontSize: "1.5rem",
                       fontWeight: 900,
                       color: "var(--text-muted)",
-                      opacity: 0.5,
+                      opacity: 0.6,
                     }}
                   >
                     {item.step}
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: "1.1rem", fontWeight: 700 }}>
+                <h3 style={{ fontSize: "1.05rem", fontWeight: 700 }}>
                   {item.title}
                 </h3>
 
-                <p style={{ fontSize: "0.88rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>
+                <p style={{ fontSize: "0.86rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>
                   {item.description}
                 </p>
               </div>

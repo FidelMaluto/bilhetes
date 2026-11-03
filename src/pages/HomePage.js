@@ -245,19 +245,20 @@ const HomePage = () => {
                 className="card"
                 style={{
                   position: "relative",
-                  borderRadius: "var(--radius-xl)",
+                  borderRadius: "var(--radius-lg)",
                   overflow: "hidden",
-                  backgroundColor: "var(--inst-black)",
+                  backgroundColor: "#171717",
                   color: "#FFFFFF",
-                  border: "2px solid rgba(214, 40, 40, 0.4)",
-                  boxShadow: "var(--shadow-md)",
+                  border: "1px solid #333333",
+                  borderTop: "3px solid var(--primary-red)",
+                  boxShadow: "var(--shadow-sm)",
                 }}
               >
                 <div
                   style={{
                     position: "absolute",
                     inset: 0,
-                    backgroundImage: `linear-gradient(180deg, rgba(16,17,20,0.6) 0%, rgba(16,17,20,0.92) 100%), url('${girabolaComp.image}')`,
+                    backgroundImage: `linear-gradient(180deg, rgba(23,23,23,0.7) 0%, rgba(23,23,23,0.95) 100%), url('${girabolaComp.image}')`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     zIndex: 1,
@@ -266,7 +267,7 @@ const HomePage = () => {
                 <div style={{ position: "relative", zIndex: 2, padding: "2.25rem", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "360px" }}>
                   <div>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                      <span className="badge badge-red" style={{ fontSize: "0.75rem" }}>
+                      <span className="badge badge-red" style={{ fontSize: "0.72rem" }}>
                         FUTEBOL SÉNIOR MASCULINO
                       </span>
                       <span style={{ fontSize: "0.82rem", color: "var(--accent-gold)", fontWeight: 700 }}>
@@ -274,16 +275,16 @@ const HomePage = () => {
                       </span>
                     </div>
 
-                    <h3 style={{ fontSize: "2rem", fontWeight: 900, color: "#FFFFFF", marginBottom: "0.6rem" }}>
+                    <h3 style={{ fontSize: "1.9rem", fontWeight: 900, color: "#FFFFFF", marginBottom: "0.6rem" }}>
                       {girabolaComp.name}
                     </h3>
-                    <p style={{ color: "#E2E5E9", fontSize: "0.92rem", lineHeight: 1.5, marginBottom: "1.5rem" }}>
+                    <p style={{ color: "#A5A29C", fontSize: "0.92rem", lineHeight: 1.55, marginBottom: "1.5rem" }}>
                       {girabolaComp.description}
                     </p>
                   </div>
 
                   <div>
-                    <div style={{ display: "flex", gap: "1.5rem", marginBottom: "1.25rem", fontSize: "0.85rem", color: "#D1D5DB" }}>
+                    <div style={{ display: "flex", gap: "1.5rem", marginBottom: "1.25rem", fontSize: "0.85rem", color: "#A5A29C" }}>
                       <div><strong>16</strong> Clubes Nacionais</div>
                       <div>•</div>
                       <div><strong>{MATCHES.filter((m) => m.competitionId === "girabola").length}</strong> Jogos com Bilheteira</div>
@@ -304,19 +305,20 @@ const HomePage = () => {
                 className="card"
                 style={{
                   position: "relative",
-                  borderRadius: "var(--radius-xl)",
+                  borderRadius: "var(--radius-lg)",
                   overflow: "hidden",
-                  backgroundColor: "var(--inst-black)",
+                  backgroundColor: "#171717",
                   color: "#FFFFFF",
-                  border: "2px solid rgba(244, 185, 66, 0.4)",
-                  boxShadow: "var(--shadow-md)",
+                  border: "1px solid #333333",
+                  borderTop: "3px solid var(--accent-gold)",
+                  boxShadow: "var(--shadow-sm)",
                 }}
               >
                 <div
                   style={{
                     position: "absolute",
                     inset: 0,
-                    backgroundImage: `linear-gradient(180deg, rgba(16,17,20,0.6) 0%, rgba(16,17,20,0.92) 100%), url('${unitelBasketComp.image}')`,
+                    backgroundImage: `linear-gradient(180deg, rgba(23,23,23,0.7) 0%, rgba(23,23,23,0.95) 100%), url('${unitelBasketComp.image}')`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     zIndex: 1,
@@ -325,24 +327,24 @@ const HomePage = () => {
                 <div style={{ position: "relative", zIndex: 2, padding: "2.25rem", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: "360px" }}>
                   <div>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "1rem" }}>
-                      <span className="badge badge-gold" style={{ fontSize: "0.75rem" }}>
+                      <span className="badge badge-gold" style={{ fontSize: "0.72rem" }}>
                         BASQUETEBOL NACIONAL
                       </span>
-                      <span style={{ fontSize: "0.82rem", color: "#FFFFFF", fontWeight: 700 }}>
+                      <span style={{ fontSize: "0.82rem", color: "#E8E4DC", fontWeight: 700 }}>
                         {unitelBasketComp.season}
                       </span>
                     </div>
 
-                    <h3 style={{ fontSize: "2rem", fontWeight: 900, color: "#FFFFFF", marginBottom: "0.6rem" }}>
+                    <h3 style={{ fontSize: "1.9rem", fontWeight: 900, color: "#FFFFFF", marginBottom: "0.6rem" }}>
                       {unitelBasketComp.name}
                     </h3>
-                    <p style={{ color: "#E2E5E9", fontSize: "0.92rem", lineHeight: 1.5, marginBottom: "1.5rem" }}>
+                    <p style={{ color: "#A5A29C", fontSize: "0.92rem", lineHeight: 1.55, marginBottom: "1.5rem" }}>
                       {unitelBasketComp.description}
                     </p>
                   </div>
 
                   <div>
-                    <div style={{ display: "flex", gap: "1.5rem", marginBottom: "1.25rem", fontSize: "0.85rem", color: "#D1D5DB" }}>
+                    <div style={{ display: "flex", gap: "1.5rem", marginBottom: "1.25rem", fontSize: "0.85rem", color: "#A5A29C" }}>
                       <div><strong>10</strong> Equipas em Disputa</div>
                       <div>•</div>
                       <div><strong>{MATCHES.filter((m) => m.competitionId === "unitel-basket").length}</strong> Jogos com Bilheteira</div>

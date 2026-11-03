@@ -55,7 +55,7 @@ const ConfirmationPage = () => {
               alignItems: "center",
               justifyContent: "center",
               margin: "0 auto 1rem",
-              boxShadow: "0 0 24px rgba(33, 139, 82, 0.25)",
+              border: "1px solid rgba(43, 122, 75, 0.25)",
             }}
           >
             <CheckCircle2 size={42} />

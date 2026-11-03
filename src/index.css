@@ -1,66 +1,80 @@
 /* Angola Sports Tickets - Global Design System */
+/* ANGOLAN HERITAGE — MODERN SPORTS */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&display=swap');
 
 :root {
-  /* Brand Palette */
-  --primary-red: #D62828;
-  --primary-red-hover: #b71c1c;
-  --primary-red-light: #fef2f2;
-  --inst-black: #101114;
-  --inst-black-card: #16181f;
-  --accent-gold: #F4B942;
-  --accent-gold-hover: #e09f23;
-  --accent-gold-light: #fffbeb;
+  /* Nova Paleta Institucional Inspirada na Bandeira de Angola */
+  --primary-red: #A51F27;
+  --primary-red-hover: #8B1A20;
+  --primary-red-active: #74151B;
+  --primary-red-light: rgba(165, 31, 39, 0.08);
+
+  --inst-black: #171717;
+  --inst-black-secondary: #222222;
+  --inst-black-card: #222222;
+
+  --accent-gold: #B08B42;
+  --accent-gold-hover: #9A7937;
+  --accent-gold-active: #86672C;
+  --accent-gold-light: rgba(176, 139, 66, 0.10);
+
+  --ivory-white: #E8E4DC;
+  --neutral-gray: #A5A29C;
+  --neutral-gray-light: #D5D2CB;
+  --bg-light-alt: #F0EEE9;
   --white: #FFFFFF;
-  --bg-gray: #F4F5F7;
-  --secondary-gray: #777D87;
-  --confirm-green: #218B52;
-  --confirm-green-light: #ecfdf5;
 
-  /* Theme Dependent (Light Mode Default) */
-  --bg-main: #F4F5F7;
+  --confirm-green: #2B7A4B;
+  --confirm-green-light: rgba(43, 122, 75, 0.10);
+
+  /* Tema Claro (Padrão Sóbrio / Fundo Claro Alternativo) */
+  --bg-main: #F0EEE9;
   --bg-surface: #FFFFFF;
-  --bg-surface-elevated: #FFFFFF;
-  --bg-muted: #EAECEF;
-  --border-color: #E2E5E9;
-  --border-focus: #D62828;
-  --text-primary: #101114;
-  --text-secondary: #5F6672;
-  --text-muted: #8E95A2;
-  --shadow-sm: 0 1px 2px 0 rgba(16, 17, 20, 0.05);
-  --shadow-md: 0 4px 12px -1px rgba(16, 17, 20, 0.08), 0 2px 4px -2px rgba(16, 17, 20, 0.05);
-  --shadow-lg: 0 12px 28px -4px rgba(16, 17, 20, 0.12), 0 6px 12px -4px rgba(16, 17, 20, 0.06);
-  --shadow-glow-red: 0 0 24px rgba(214, 40, 40, 0.25);
-  --shadow-glow-gold: 0 0 24px rgba(244, 185, 66, 0.3);
+  --bg-surface-elevated: #F8F7F4;
+  --bg-muted: #E8E4DC;
+  --border-color: #D8D4CA;
+  --border-focus: #A51F27;
+  --text-primary: #171717;
+  --text-secondary: #5A5751;
+  --text-muted: #8A8780;
 
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 24px;
+  /* Sombras neutras muito subtis (sem brilho, sem cores) */
+  --shadow-sm: 0 1px 2px rgba(23, 23, 23, 0.05);
+  --shadow-md: 0 2px 6px rgba(23, 23, 23, 0.07);
+  --shadow-lg: 0 6px 14px rgba(23, 23, 23, 0.09);
+  --shadow-glow-red: none;
+  --shadow-glow-gold: none;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --radius-full: 9999px;
 
   --transition-fast: 0.15s ease;
-  --transition-base: 0.25s ease;
-  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 0.2s ease;
+  --transition-smooth: 0.25s ease;
 }
 
-/* Dark Mode Theme Variables */
+/* Modo Escuro Sóbrio e Institucional */
 [data-theme="dark"] {
-  --bg-main: #0B0C0E;
-  --bg-surface: #13151B;
-  --bg-surface-elevated: #191C24;
-  --bg-muted: #1E212B;
-  --border-color: #262A36;
-  --border-focus: #D62828;
-  --text-primary: #F4F5F7;
-  --text-secondary: #9DA4B2;
-  --text-muted: #6B7280;
-  --primary-red-light: rgba(214, 40, 40, 0.15);
-  --accent-gold-light: rgba(244, 185, 66, 0.15);
-  --confirm-green-light: rgba(33, 139, 82, 0.15);
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 6px 16px -2px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 16px 32px -4px rgba(0, 0, 0, 0.65);
+  --bg-main: #141414;
+  --bg-surface: #1B1B1B;
+  --bg-surface-elevated: #222222;
+  --bg-muted: #282828;
+  --border-color: #2E2E2E;
+  --border-focus: #A51F27;
+  --text-primary: #E8E4DC;
+  --text-secondary: #A5A29C;
+  --text-muted: #6E6B65;
+
+  --primary-red-light: rgba(165, 31, 39, 0.16);
+  --accent-gold-light: rgba(176, 139, 66, 0.16);
+  --confirm-green-light: rgba(43, 122, 75, 0.16);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 3px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -141,20 +155,20 @@ input, select, textarea {
 
 /* Typography Helpers */
 .title-hero {
-  font-size: clamp(2.2rem, 5vw, 3.75rem);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.1;
 }
 
 .title-section {
-  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .title-subsection {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
   font-weight: 700;
 }
 
@@ -174,7 +188,7 @@ input, select, textarea {
   color: var(--text-secondary);
 }
 
-/* Button Component Styles */
+/* Button Component Styles - Cores sólidas sem brilho ou reflexos */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -182,27 +196,27 @@ input, select, textarea {
   gap: 0.5rem;
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.75rem 1.4rem;
+  padding: 0.72rem 1.35rem;
   border-radius: var(--radius-md);
-  transition: all var(--transition-base);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
   user-select: none;
   white-space: nowrap;
+  box-shadow: none !important;
+  border: 1px solid transparent;
 }
 
 .btn-primary {
   background-color: var(--primary-red);
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(214, 40, 40, 0.35);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-red-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(214, 40, 40, 0.45);
+  color: #FFFFFF;
 }
 
 .btn-primary:active {
-  transform: translateY(0);
+  background-color: var(--primary-red-active);
 }
 
 .btn-secondary {
@@ -213,32 +227,37 @@ input, select, textarea {
 
 .btn-secondary:hover {
   background-color: var(--bg-muted);
-  border-color: var(--text-secondary);
+  border-color: var(--neutral-gray);
+  color: var(--text-primary);
 }
 
 .btn-gold {
   background-color: var(--accent-gold);
-  color: var(--inst-black);
-  box-shadow: 0 4px 14px rgba(244, 185, 66, 0.35);
+  color: #FFFFFF;
 }
 
 .btn-gold:hover {
   background-color: var(--accent-gold-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(244, 185, 66, 0.45);
+  color: #FFFFFF;
+}
+
+.btn-gold:active {
+  background-color: var(--accent-gold-active);
 }
 
 .btn-dark {
   background-color: var(--inst-black);
-  color: #FFFFFF;
+  color: var(--ivory-white);
+  border: 1px solid #2E2E2E;
 }
 
 .btn-dark:hover {
-  background-color: #232630;
+  background-color: var(--inst-black-secondary);
+  color: #FFFFFF;
 }
 
 .btn-outline-red {
-  border: 1.5px solid var(--primary-red);
+  border: 1px solid var(--primary-red);
   color: var(--primary-red);
   background: transparent;
 }
@@ -249,61 +268,62 @@ input, select, textarea {
 }
 
 .btn-outline-gold {
-  border: 1.5px solid var(--accent-gold);
+  border: 1px solid var(--accent-gold);
   color: var(--accent-gold);
   background: transparent;
 }
 
 .btn-outline-gold:hover {
   background-color: var(--accent-gold);
-  color: var(--inst-black);
+  color: #FFFFFF;
 }
 
 .btn-sm {
-  padding: 0.5rem 0.9rem;
-  font-size: 0.85rem;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.84rem;
   border-radius: var(--radius-sm);
 }
 
 .btn-lg {
-  padding: 0.95rem 1.8rem;
-  font-size: 1.05rem;
+  padding: 0.9rem 1.7rem;
+  font-size: 1.02rem;
   border-radius: var(--radius-md);
 }
 
 .btn-icon {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   padding: 0;
   border-radius: var(--radius-md);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
-/* Badges */
+/* Badges - Sóbrias e Institucionais */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-sm);
 }
 
 .badge-red {
   background-color: var(--primary-red-light);
   color: var(--primary-red);
-  border: 1px solid rgba(214, 40, 40, 0.25);
+  border: 1px solid rgba(165, 31, 39, 0.25);
 }
 
 .badge-gold {
   background-color: var(--accent-gold-light);
-  color: #B45309;
-  border: 1px solid rgba(244, 185, 66, 0.35);
+  color: var(--accent-gold);
+  border: 1px solid rgba(176, 139, 66, 0.25);
 }
 
 [data-theme="dark"] .badge-gold {
@@ -313,37 +333,39 @@ input, select, textarea {
 .badge-green {
   background-color: var(--confirm-green-light);
   color: var(--confirm-green);
-  border: 1px solid rgba(33, 139, 82, 0.25);
+  border: 1px solid rgba(43, 122, 75, 0.25);
 }
 
 .badge-dark {
   background-color: var(--inst-black);
-  color: #FFFFFF;
+  color: var(--ivory-white);
+  border: 1px solid #2E2E2E;
 }
 
 .badge-neutral {
   background-color: var(--bg-muted);
   color: var(--text-secondary);
+  border: 1px solid var(--border-color);
 }
 
-/* Cards & Surfaces */
+/* Cartões e Superfícies Sólidas */
 .card {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-base);
+  transition: border-color var(--transition-base), background-color var(--transition-base);
   overflow: hidden;
 }
 
 .card:hover {
+  border-color: var(--neutral-gray);
   box-shadow: var(--shadow-md);
-  border-color: rgba(214, 40, 40, 0.3);
 }
 
-/* Angola Flag Ribbon */
+/* Faixa da Bandeira Nacional de Angola */
 .angola-stripe-top {
-  height: 4px;
+  height: 3px;
   background: linear-gradient(90deg, var(--primary-red) 0%, var(--primary-red) 50%, var(--inst-black) 50%, var(--inst-black) 100%);
   position: relative;
 }
@@ -355,7 +377,7 @@ input, select, textarea {
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--accent-gold);
-  font-size: 8px;
+  font-size: 7px;
   line-height: 1;
 }
 
@@ -384,7 +406,7 @@ input, select, textarea {
   gap: 1.75rem;
 }
 
-/* Form Controls */
+/* Formulários */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -402,26 +424,26 @@ input, select, textarea {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: var(--radius-md);
-  border: 1.5px solid var(--border-color);
+  border: 1px solid var(--border-color);
   background-color: var(--bg-surface);
   color: var(--text-primary);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast);
 }
 
 .form-control:focus {
   border-color: var(--primary-red);
-  box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.15);
+  box-shadow: none;
   outline: none;
 }
 
-/* Ticket Stub Style */
+/* Estilo Talão de Bilhete Institucional */
 .ticket-stub {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .ticket-stub::before,
@@ -429,49 +451,40 @@ input, select, textarea {
   content: '';
   position: absolute;
   top: 65%;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background-color: var(--bg-main);
   z-index: 2;
 }
 
 .ticket-stub::before {
-  left: -10px;
+  left: -9px;
   border-right: 1px solid var(--border-color);
 }
 
 .ticket-stub::after {
-  right: -10px;
+  right: -9px;
   border-left: 1px solid var(--border-color);
 }
 
 .ticket-perforation {
-  border-top: 2px dashed var(--border-color);
+  border-top: 1.5px dashed var(--border-color);
   margin: 1.5rem 0;
   position: relative;
 }
 
-/* Animations */
+/* Transição de entrada suave */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.35s ease forwards;
+  animation: fadeIn 0.25s ease forwards;
 }
 
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 3s infinite ease-in-out;
-}
-
-/* Print Optimization */
+/* Otimização de Impressão */
 @media print {
   body {
     background: #FFFFFF !important;
@@ -485,7 +498,7 @@ input, select, textarea {
   }
   .ticket-stub {
     box-shadow: none !important;
-    border: 2px solid #000 !important;
+    border: 1.5px solid #000 !important;
     page-break-inside: avoid;
   }
 }
